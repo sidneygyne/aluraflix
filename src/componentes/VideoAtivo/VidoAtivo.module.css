@@ -1,0 +1,59 @@
+:root {
+    --fontePrimaria: 'Roboto', sans-serif;
+    --fonteSecundaria: 'Source Sans 3', sans-serif;
+    --fundo: #262626;
+    --fundoRodape: #000000;
+    --corFonte_primaria: #ffffff; 
+    --corFonte_secundaria:#2271D1;
+    --cor_back: #00C86F;
+    --cor_front: #6BD1FF;
+    --cor_mobile: #FFBA05;
+    --label_active: #E53935;
+    --label: #A5A5A5;
+  }
+  
+.background {
+    width: 100%;
+    height: 832px;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 90%;
+    height: auto;
+    gap: 50px;
+}
+
+iframe {
+
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    border: transparent;
+    background-color: #E53935;
+    border-radius: 15px;
+    width: auto;
+    max-width: 100%;
+    padding: 20px;
+    display: inline;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 9px;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin: 0;
+}
