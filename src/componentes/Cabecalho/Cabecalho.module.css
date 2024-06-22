@@ -1,0 +1,20 @@
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 42.5px;
+    gap: 10px;
+}
+
+.menu {
+    display: inline-flex;
+    flex-wrap: wrap ;
+    gap: 25px;
+}
+
+.logo {
+   margin-top: 10px;
+    display: inline-flex;
+   
+}

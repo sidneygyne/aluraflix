@@ -1,4 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --fontePrimaria: 'Roboto', sans-serif;
+  --fonteSecundaria: 'Source Sans 3', sans-serif;
+  --fundo: #262626;
+  --fundoRodape: #000000;
+  --corFonte_primaria: #ffffff; 
+  --corFonte_secundaria:#2271D1;
+  --cor_back: #00C86F;
+  --cor_front: #6BD1FF;
+  --cor_mobile: #FFBA05;
+  --label_active: #E53935;
+  --label: #A5A5A5;
+}
+
 body {
+  background-color: var(--fundo);
+  color: var(--corFonte_primaria);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
