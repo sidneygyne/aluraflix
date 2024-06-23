@@ -9,12 +9,10 @@ function VideoAtivo() {
                 height="832" 
                 style={{
                     background: `
-                    linear-gradient(to bottom,
-                        rgba(0, 0, 0, 0.5),
-                        rgba(0, 0, 0, 0.5)),
-                      url('https://i.ytimg.com/vi/LbKDxQ0jX90/maxresdefault.jpg') no-repeat 100%
+                      url('https://i.ytimg.com/vi/CaTbfdsVydE/hqdefault.jpg') no-repeat 100%
                       `,
                       backgroundSize: 'cover',
+                      opacity: 0.5,
 
                     //   backgroundPosition: 'center'
                 }}

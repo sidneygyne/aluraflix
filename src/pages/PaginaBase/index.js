@@ -1,4 +1,5 @@
 import Cabecalho from "componentes/Cabecalho";
+import Rodape from "componentes/Rodape";
 import VideoAtivo from "componentes/VideoAtivo";
 import Inicio from "pages/Inicio";
 import { useState } from "react";
@@ -137,6 +138,7 @@ function PaginaBase() {
             <Cabecalho/>
             <Inicio/>
             <VideoAtivo/>
+            <Rodape/>
 
         </main>
     )

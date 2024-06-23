@@ -1,0 +1,69 @@
+.logo {
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center;
+    
+ }
+
+.rodape {
+    background-color: var(--fundoRodape);
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.texto {
+    color: var(--corFonte_primaria);
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+.redes_sociais {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icone {
+    color: var(--corFonte_primaria);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.icone:hover {
+    transform: scale(1.3);
+    color: var(--corFonte_secundaria);
+}
+
+
+@media (max-width: 767px) {
+    .rodape {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .texto {
+        font-size: 0.8rem;
+    }
+    .icone {
+        color: var(--corFonte_primaria);
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .rodape {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .texto {
+        font-size: 0.6rem;
+    }
+    .icone {
+        color: var(--corFonte_primaria);
+        font-size: 1rem;
+    }
+}
