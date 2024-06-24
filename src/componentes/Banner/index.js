@@ -1,8 +1,8 @@
-import styles from './VidoAtivo.module.css'
+import styles from './Banner.module.css'
 
-function VideoAtivo() {
+function Banner() {
     
-     const imagem = "https://i.ytimg.com/vi/CaTbfdsVydE/hqdefault.jpg"
+    const imagem = "https://i.ytimg.com/vi/CaTbfdsVydE/hqdefault.jpg"
     
     return (
 
@@ -37,16 +37,8 @@ function VideoAtivo() {
                     </div>
                 </section>
             </section>
-
-
-
-
         </>
-
-
-
-
     )
 }
 
-export default VideoAtivo
+export default Banner

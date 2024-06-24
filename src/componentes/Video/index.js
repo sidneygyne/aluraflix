@@ -1,15 +1,13 @@
 import styles from './Video.module.css'
 import { MdDeleteForever, MdOutlineEdit } from "react-icons/md";
 
-function Video() {
-
-    const imagem = "https://i.ytimg.com/vi/CaTbfdsVydE/hqdefault.jpg"
+function Video({ video, categoria }) {
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{ borderColor: categoria.cor }}>
             <div className={styles.imagem}>
-                <img src={imagem} alt='' />
-                <div className={styles.divImg}></div>
+                <img src={video.imagem} alt={video.titulo} />
+                <div className={styles.divImg} style={{ color: categoria.cor }}></div>
             </div>
             <div className={styles.opcoes}>
                 <div className={styles.item_opcao}>
@@ -23,8 +21,6 @@ function Video() {
 
             </div>
         </div>
-
-
     )
 }
 

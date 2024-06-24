@@ -1,0 +1,30 @@
+.categoria {
+    margin-left: 42px;
+    margin-left: 42px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 93px;
+    
+}
+
+.categoria h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    border: transparent;
+    border-radius: 15px;
+    width: 25%;
+    max-width: none;
+    padding: 20px;
+    display: inline;
+    margin-top: 42px;
+    margin-bottom: 42px;
+}
+
+.videos {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow: auto;
+
+}
