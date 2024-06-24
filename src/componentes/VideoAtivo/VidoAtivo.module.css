@@ -26,10 +26,21 @@
     width: 90%;
     height: auto;
     gap: 50px;
+    
 }
 
-iframe {
+.minibanner {
+    border: 4px solid;
+    color: var(--corFonte_secundaria);
+    width: 646px; 
+    height: 333px;
+    box-shadow: inset var(--corFonte_secundaria) 0px 0px 12px -4px;
+}
 
+
+iframe {
+    border: 4px solid;
+    color: var(--corFonte_secundaria);
 }
 
 h1 {

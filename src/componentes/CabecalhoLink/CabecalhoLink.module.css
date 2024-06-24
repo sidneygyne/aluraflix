@@ -33,5 +33,4 @@
 .link:focus{
     color: var(--corFonte_secundaria);
     border-color: var(--corFonte_secundaria);
-    box-shadow: inset var(--corFonte_secundaria) 0px 0px 12px -4px;
 }
