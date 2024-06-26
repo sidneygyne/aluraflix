@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Cabecalho.module.css'
 import logo from './logo.png'
-import CabecalhoLink from 'componentes/CabecalhoLink'
+import Botao from 'componentes/Botao'
 
 
 function Cabecalho() {
@@ -12,12 +12,12 @@ function Cabecalho() {
             </Link>
             
             <nav className={styles.menu}>
-                <CabecalhoLink  url="./">
+                <Botao  condition="true" url="./">
                     HOME
-                </CabecalhoLink>
-                <CabecalhoLink url="./addvideo">
+                </Botao>
+                <Botao condition="true" url="./addvideo">
                     NOVO VIDEO
-                </CabecalhoLink>
+                </Botao>
             </nav>
         </header>
     )

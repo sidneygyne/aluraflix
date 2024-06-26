@@ -1,6 +1,5 @@
 import Inicio from "./pages/Inicio";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import APP from "app";
 import NovoVideo from "pages/NovoVideo";
 import PaginaBase from "pages/PaginaBase";
 

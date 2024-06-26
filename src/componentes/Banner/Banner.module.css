@@ -43,12 +43,12 @@ iframe {
     color: var(--corFonte_secundaria);
 }
 
-h1 {
+.container h1 {
     font-size: 2rem;
     font-weight: 800;
     text-align: center;
     border: transparent;
-    background-color: #E53935;
+    /* background-color: #E53935; */
     border-radius: 15px;
     width: auto;
     max-width: 100%;

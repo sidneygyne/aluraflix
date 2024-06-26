@@ -19,8 +19,13 @@ function Inicio() {
         },
         {
             id: uuidv4(),
-            nome: 'MOBILE',
+            nome: 'INOVAÇÃO',
             cor: '#FFBA05',
+        },
+        {
+            id: uuidv4(),
+            nome: 'GESTÃO',
+            cor: '#F96DC3',
         }
     ])
 
@@ -35,15 +40,14 @@ function Inicio() {
 
     return (
         <>
-            <Banner />
-            <section>
+            <Banner categoria={categorias}/>
+            <section className={styles.categorias}>
                 {categorias.map((categoria, indice) => <SessaoPorCategoria
                     key={indice}
                     categoria={categoria}
                     videos={videos.filter(video => video.categoria === categoria.nome)}
                 />)}
             </section>
-
         </>
     )
 }

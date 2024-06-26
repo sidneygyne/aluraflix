@@ -5,7 +5,7 @@
   --fontePrimaria: 'Roboto', sans-serif;
   --fonteSecundaria: 'Source Sans 3', sans-serif;
   --fundo: #262626;
-  --fundoRodape: #000000;
+  --fundoEscuro: #000000;
   --corFonte_primaria: #ffffff; 
   --corFonte_secundaria:#2271D1;
   --cor_back: #00C86F;
@@ -13,6 +13,10 @@
   --cor_mobile: #FFBA05;
   --label_active: #E53935;
   --label: #A5A5A5;
+  --corFonteInput: #A5A5A5;
+  --corBordaAtivaFormErro: #E53935;
+  --corFundoForm: #191919;
+
 }
 
 body {

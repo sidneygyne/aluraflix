@@ -1,0 +1,33 @@
+
+:root {
+    --fundo: #262626;
+    --fundoRodape: #000000;
+    --corFonte_primaria: #ffffff; 
+    --corFonte_secundaria:#2271D1;
+    --cor_back: #00C86F;
+    --cor_front: #6BD1FF;
+    --cor_mobile: #FFBA05;
+    --label_active: #E53935;
+    --label: #A5A5A5;
+    --corFonteInput: #A5A5A5;
+    --corBordaAtivaFormErro: #E53935;
+}
+
+.campo {
+    font-family: var(--fonteSecundaria);
+    font-weight: 600;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    gap: 15px;
+}
+
+.campoInput {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid var(--fundo);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--corFonteInput);
+}

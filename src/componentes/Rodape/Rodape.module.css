@@ -2,14 +2,11 @@
     margin-top: 10px;
     display: flex; 
     justify-content: center;
-    
  }
 
 .rodape {
     background-color: var(--fundoRodape);
-    margin-top: 140px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .texto {
