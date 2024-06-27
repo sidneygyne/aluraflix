@@ -19,7 +19,7 @@
     font-size: 1.25rem;
     display: flex;
     flex-direction: column;
-    width: 49%;
+    width: 48%;
     gap: 15px;
 }
 
@@ -30,4 +30,12 @@
     border-radius: 10px;
     background-color: transparent;
     color: var(--corFonteInput);
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--fonteSecundaria);
+}
+
+.campoInput:focus {
+    border-color: var(--corFonte_secundaria);
 }

@@ -6,7 +6,10 @@
 
 .rodape {
     background-color: var(--fundoRodape);
-    margin-bottom: 20px;
+    padding-top: 42.5px;
+    padding-bottom: 42.5px;
+    border-top: 4px solid var(--corFonte_secundaria);
+
 }
 
 .texto {

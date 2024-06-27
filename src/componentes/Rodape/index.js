@@ -1,6 +1,6 @@
 import styles from './Rodape.module.css'
 import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
-import logo from './logo_rodape.png'
+import logo from './logo.png'
 import { Link } from 'react-router-dom';
 
 function Rodape() {

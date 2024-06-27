@@ -42,7 +42,6 @@ function Formulario({ aoCadastrar, categorias }) {
             <div className={styles.sessaoCampos}>
                 <h2>Criar Card</h2>
                 <div className={styles.campos}>
-
                     <CampoFormulario
                         obrigatorio={true}
                         label="Título"
@@ -54,6 +53,7 @@ function Formulario({ aoCadastrar, categorias }) {
                     <ListaSuspensa
                         obrigatorio={true}
                         label="Categoría"
+                        placeholder="Selecione uma categoía..."
                         itens={categorias}
                         valor={categoria}
                         aoAlterado={valor => setCategoria(valor)}
@@ -82,16 +82,17 @@ function Formulario({ aoCadastrar, categorias }) {
                         valor={descricao}
                         aoAlterado={valor => setDescricao(valor)}
                     />
-                    <div className={styles.botoes}>
-                        <BotaoFormulario
-                            children="Guardar"
-                            type='submit'
-                        />
-                        <BotaoFormulario
-                            children="Limpar"
-                            type='reset'
-                        />
-                    </div>
+
+                </div>
+                <div className={styles.botoes}>
+                    <BotaoFormulario
+                        children="Guardar"
+                        type='submit'
+                    />
+                    <BotaoFormulario
+                        children="Limpar"
+                        type='reset'
+                    />
                 </div>
             </div>
         </form>

@@ -15,4 +15,11 @@
     border-radius: 10px;
     background-color: transparent;
     color: var(--corFonteInput);
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--fonteSecundaria);
+}
+
+.campoInput:focus {
+    border-color: var(--corFonte_secundaria);
 }

@@ -1,6 +1,6 @@
 .formulario {
     width: 100%;
-    background-color: var(--corFundoForm);
+    background-color: var(--fundoFundo);
     padding-bottom: 20px;
     padding-top: 71px;
 }
@@ -13,8 +13,9 @@
     font-size: 3.75rem;
     font-weight: 900;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 15px;
+    margin: 0;
 }
 
 .cabecalho p {
@@ -26,30 +27,33 @@
     text-transform: uppercase;
 }
 
-.formulario h2 {
-    font-size: 2,25rem ;
+.sessaoCampos h2 {
+    font-size: 2.25rem ;
     font-weight: 600;
     font-family: var(--fonteSecundaria);
+    margin: 0;
+    padding-bottom: 60px;
 }
 
 .sessaoCampos {
-    margin-left: 134px;
-    margin-right: 134px;
-    margin-top: 47px;
-    margin-bottom: 71px;
+    padding-left: 134px;
+    padding-right: 134px;
+    padding-top: 47px;
+    padding-bottom: 71px;
 }
 
 .campos {
     display: flex;
-    flex-direction: column;
+    flex-direction: wrap;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     flex-shrink: auto;
 }
 
 .botoes {
     display: flex;
     gap: 30px;
+    padding-top: 60px;
 }
 
 

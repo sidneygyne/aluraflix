@@ -5,6 +5,7 @@
   --fontePrimaria: 'Roboto', sans-serif;
   --fonteSecundaria: 'Source Sans 3', sans-serif;
   --fundo: #262626;
+  --fundoFundo: #191919;
   --fundoEscuro: #000000;
   --corFonte_primaria: #ffffff; 
   --corFonte_secundaria:#2271D1;
@@ -20,7 +21,7 @@
 }
 
 body {
-  background-color: var(--fundo);
+  background-color: var(--fundoEscuro);
   color: var(--corFonte_primaria);
   margin: 0;
   font-family: var(--fontePrimaria);

@@ -2,7 +2,7 @@ import styles from './Banner.module.css'
 
 function Banner({ categoria }) {
 
-    const imagem = "https://i.ytimg.com/vi/CaTbfdsVydE/hqdefault.jpg"
+    const imagem = "https://i.ytimg.com/vi/MGIs7DSQ-0A/maxresdefault.jpg"
 
     console.log(categoria)
     return (
@@ -14,11 +14,12 @@ function Banner({ categoria }) {
                 style={{
                     background: `
                     linear-gradient(to bottom,
-                        rgba(0, 0, 0, 0.5),
-                        rgba(0, 0, 0, 0.5)),
+                        rgba(0, 0, 0, 0.56),
+                        rgba(0, 0, 0, 0.56)),
                       url('${imagem}') no-repeat 100%
                       `,
                     backgroundSize: 'cover',
+                    
 
                     //   backgroundPosition: 'center'
                 }}

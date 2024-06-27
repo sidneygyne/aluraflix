@@ -1,18 +1,17 @@
 import styles from './ListaSuspensa.module.css'
 
-    function ListaSuspensa ({label, aoAlterado, valor, obrigatorio = false, itens }) {
+    function ListaSuspensa ({label, aoAlterado, valor, obrigatorio = false, itens, placeholder }) {
     return (
         <div className={styles.listaSuspensa}>
             <label>{label}</label>
-            <select className={styles.campoInput} 
-                onChange={evento => 
-                aoAlterado(evento.target.value)} 
+            <select className={styles.campoInput}
+                placeholder={placeholder} 
+                onChange={evento => aoAlterado(evento.target.value)} 
                 required={obrigatorio} 
                 value={valor} >
-                    <option value=""></option> 
+                    <option className={styles.opcoes} value="">Selecione uma categoría...</option> 
                 {itens.map(iten => {
-
-                    return <option key={iten}>{iten}</option>
+                    return <option className={styles.opcoes} key={iten}>{iten}</option>
                 })}
             </select>
         </div>

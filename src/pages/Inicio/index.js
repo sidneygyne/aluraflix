@@ -31,7 +31,7 @@ function Inicio() {
 
     const [videos, setVideos] = useState([])
     useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraplay')
+        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
             .then(resposta => resposta.json())
             .then(dados => {
                 setVideos(dados)

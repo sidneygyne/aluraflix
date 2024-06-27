@@ -1,27 +1,12 @@
-:root {
-    --fontePrimaria: 'Roboto', sans-serif;
-    --fonteSecundaria: 'Source Sans 3', sans-serif;
-    --fundo: #262626;
-    --fundoRodape: #000000;
-    --corFonte_primaria: #ffffff;
-    --corFonte_secundaria: #2271D1;
-    --cor_back: #00C86F;
-    --cor_front: #6BD1FF;
-    --cor_mobile: #FFBA05;
-    --label_active: #E53935;
-    --label: #A5A5A5;
-}
-
 .link {
     text-decoration: none;
     background-color: transparent;
     color: var(--corFonte_primaria);
-    font-family: var(--fontePrimaria);
+    font-family: var(--fonteSecundaria);
     font-size: 1.25rem;
     font-weight: 900;
     border: 2px solid var(--corFonte_primaria);
     border-radius: 15px;
-    
     cursor: pointer;
     display: flex;
     flex-direction: row;

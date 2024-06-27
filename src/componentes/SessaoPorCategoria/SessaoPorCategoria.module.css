@@ -1,9 +1,11 @@
 .categoria {
-    margin-left: 42px;
-    margin-right: 42px;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-top: 38px;
+    padding-bottom: 93px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 93px;
+
 }
 
 .categoria h3 {
@@ -16,7 +18,7 @@
     max-width: none;
     padding: 20px;
     display: inline;
-    margin-top: 42px;
+    margin-top: 0;
     margin-bottom: 42px;
 }
 

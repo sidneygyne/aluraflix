@@ -18,8 +18,13 @@ function NovoVideo () {
         },
         {
             id: uuidv4(),
-            nome: 'MOBILE',
+            nome: 'INOVAÇÃO',
             cor: '#FFBA05',
+        },
+        {
+            id: uuidv4(),
+            nome: 'GESTÃO',
+            cor: '#F96DC3',
         }
     ])
 
