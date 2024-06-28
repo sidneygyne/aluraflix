@@ -1,53 +1,36 @@
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useEffect, useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
 import styles from './Inicio.module.css'
 import Banner from 'componentes/Banner'
-import SessaoPorCategoria from "componentes/SessaoPorCategoria";
+import SessaoPorCategoria from "componentes/SessaoPorCategoria"
+import ModalEditar from "componentes/ModalEditar"
+import useVideos from "../../useJson/useVideos"
+import useGaleria from "../../useJson/useGaleria"
 
 function Inicio() {
 
-    const [categorias, setCategorias] = useState([
-        {
-            id: uuidv4(),
-            nome: 'FRONT END',
-            cor: '#6BD1FF',
-        },
-        {
-            id: uuidv4(),
-            nome: 'BACK END',
-            cor: '#00C86F',
-        },
-        {
-            id: uuidv4(),
-            nome: 'INOVAÇÃO',
-            cor: '#FFBA05',
-        },
-        {
-            id: uuidv4(),
-            nome: 'GESTÃO',
-            cor: '#F96DC3',
-        }
-    ])
+    const { videos, categorias, videosDaGaleria, videoSelecionado, editarVideo, setVideoSelecionado} = useGaleria()
 
-    const [videos, setVideos] = useState([])
-    useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
-            .then(resposta => resposta.json())
-            .then(dados => {
-                setVideos(dados)
-            })
-    }, [])
+    //console.log('categorias:', categorias)
 
     return (
         <>
-            <Banner categoria={categorias}/>
+            <Banner categoria={categorias} />
             <section className={styles.categorias}>
-                {categorias.map((categoria, indice) => <SessaoPorCategoria
+                {categorias.map((categoria, indice) => (
+                    <SessaoPorCategoria
                     key={indice}
                     categoria={categoria}
-                    videos={videos.filter(video => video.categoria === categoria.nome)}
-                />)}
+                    videos={videos.filter((video) => video.categoria === categoria.nome)}
+
+                    aoVideoSelecionado={setVideoSelecionado}
+                    aoEditarVideoSolicitado={editarVideo}
+                />))}
             </section>
+            <ModalEditar
+                video={videoSelecionado}
+                onClose={() => setVideoSelecionado(null)}
+            />
         </>
     )
 }

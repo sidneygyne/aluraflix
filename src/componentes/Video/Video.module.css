@@ -1,6 +1,6 @@
 .container {
     width: 432px;
-    height: 320px;
+    height: 322px;
     border: 4px solid;
     border-radius: 4px 4px 15px 15px;
 }
@@ -29,12 +29,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 15.5px;
-    margin-bottom: 16px;
 }
 
 .item_opcao {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
 }
