@@ -4,7 +4,7 @@ function Banner({ categoria }) {
 
     const imagem = "https://i.ytimg.com/vi/MGIs7DSQ-0A/maxresdefault.jpg"
 
-    // console.log(categoria)
+    console.log(categoria)
     return (
         <>
             <section

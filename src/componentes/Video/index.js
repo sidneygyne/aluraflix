@@ -1,38 +1,27 @@
 import styles from './Video.module.css'
 import { MdDeleteForever, MdOutlineEdit } from "react-icons/md";
 
-function Video({ video, categoria, aoEditarVideoSolicitado }) {
-
-    const clickEditar = () => {
-        aoEditarVideoSolicitado(video)
-    }
+function Video({ video, categoria }) {
 
     return (
-        <div className={styles.container} style={{ borderColor: categoria?.cor || 'default-color'}}>
+        <div className={styles.container} style={{ borderColor: categoria.cor }}>
             <div className={styles.imagem}>
                 <img src={video.imagem} alt={video.titulo} />
-                <div className={styles.divImg} style={{ borderColor: categoria?.cor || 'default-color' }}></div>
+                <div className={styles.divImg} style={{ color: categoria.cor }}></div>
             </div>
             <div className={styles.opcoes}>
-
-                <button className={styles.item_opcao}>
+                <div className={styles.item_opcao}>
                     <MdDeleteForever />
                     <p>DELETAR</p>
-                </button>
-
-                {categoria && (
-                    <button className={styles.item_opcao}
-                        onClick={clickEditar} >
-                        <MdOutlineEdit />
-                        <p>EDITAR</p>
-                    </button>
-                )}
-
+                </div>
+                <div className={styles.item_opcao}>
+                    <MdOutlineEdit />
+                    <p>EDITAR</p>
+                </div>
 
             </div>
         </div>
     )
-
 }
 
 export default Video
