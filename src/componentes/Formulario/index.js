@@ -6,6 +6,7 @@ import Textarea from 'componentes/Textarea'
 import { BotaoFormulario } from 'componentes/Botao'
 import videos from '../../json/db.json'
 import fetch from 'cross-fetch'
+import db from '../../json/db.json'
 
 
 function Formulario({ aoCadastrar, categorias }) {
@@ -27,39 +28,37 @@ function Formulario({ aoCadastrar, categorias }) {
 
     const aoSalvar = async (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido! => ',titulo, imagem, link, categoria)
+        console.log('Form foi submetido! => ', titulo, imagem, link, categoria, descricao)
+
         try {
-            const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
+            const novoVideo = {
                 titulo,
                 imagem,
                 link,
                 categoria,
                 descricao,
-              }),
-            })
-        
-            if (response.ok) {
-              console.log('Vídeo cadastrado com sucesso!')
-              limparFormulario()
-              aoCadastrar({
-                titulo,
-                imagem,
-                link,
-                categoria,
-                descricao,
-              })
-            } else {
-              console.error('Erro ao cadastrar o vídeo:', response.status);
             }
-          } catch (error) {
+
+
+            const response = await fetch('http://localhost:3000/videos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(novoVideo),
+            })
+
+            if (response.ok) {
+                console.log('Vídeo cadastrado com sucesso!')
+                limparFormulario()
+                aoCadastrar(novoVideo)
+            } else {
+                console.error('Erro ao cadastrar o vídeo:', response.status);
+            }
+        } catch (error) {
             console.error('Erro na requisição:', error);
-          }
         }
+    }
 
     return (
         <form onSubmit={aoSalvar} onReset={limparFormulario} className={styles.formulario} >

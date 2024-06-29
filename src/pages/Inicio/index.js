@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './Inicio.module.css'
 import Banner from 'componentes/Banner'
 import SessaoPorCategoria from "componentes/SessaoPorCategoria";
+import db from '../../json/db.json'
 
 function Inicio() {
 
@@ -30,13 +31,25 @@ function Inicio() {
     ])
 
     const [videos, setVideos] = useState([])
+
     useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
-            .then(resposta => resposta.json())
-            .then(dados => {
-                setVideos(dados)
-            })
-    }, [])
+        const videosWithCategories = db.videos.map((video) => ({
+            ...video,
+            categoria: categorias.find((categoria) => categoria.nome === video.categoria),
+        }));
+        setVideos(videosWithCategories)
+    }, [categorias])
+
+    // console.log(db.videos)
+    // console.log(videos[0].titulo)
+
+    // useEffect(() => {
+    //     fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
+    //         .then(resposta => resposta.json())
+    //         .then(dados => {
+    //             setVideos(dados)
+    //         })
+    // }, [])
 
     const adicionarNovoVideo = (novoVideo) => {
         setVideos([...videos, novoVideo])

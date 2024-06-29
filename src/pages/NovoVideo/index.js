@@ -2,7 +2,7 @@ import Formulario from 'componentes/Formulario'
 import styles from './NovoVideo.module.css'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import videos from '../../json/db.json'
+import db from '../../json/db.json'
 
 function NovoVideo() {
 
@@ -29,19 +29,19 @@ function NovoVideo() {
         }
     ])
 
-    const [videos, setVideos] = useState([])
+    const [videos, setVideos] = useState(db.videos)
 
-    useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
-            .then(resposta => resposta.json())
-            .then(dados => {
-                setVideos(dados)
-            })
-    }, [])
+    // useEffect(() => {
+    //     fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
+    //         .then(resposta => resposta.json())
+    //         .then(dados => {
+    //             setVideos(dados)
+    //         })
+    // }, [])
 
     const adicionarNovoVideo = async (novoVideo) => {
         try {
-            const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
+            const response = await fetch('http://localhost:3000/videos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

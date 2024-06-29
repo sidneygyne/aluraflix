@@ -3,6 +3,7 @@ import { MdDeleteForever, MdOutlineEdit } from "react-icons/md";
 
 function Video({ video, categoria }) {
 
+
     return (
         <div className={styles.container} style={{ borderColor: categoria.cor }}>
             <div className={styles.imagem}>
