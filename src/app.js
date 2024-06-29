@@ -2,6 +2,7 @@
 import Cabecalho from "componentes/Cabecalho"
 import Rodape from "componentes/Rodape"
 import Inicio from "pages/Inicio"
+import NovoVideo from "pages/NovoVideo"
 
 
 function APP() {
@@ -10,13 +11,12 @@ function APP() {
     
 
     return (
-        <main>
-            <Cabecalho />
-            <Inicio />
-           
-            <Rodape />
-
-        </main>
+        <>
+        <Inicio/>
+        <NovoVideo/>
+        
+        
+        </>
     )
 }
 

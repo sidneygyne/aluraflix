@@ -38,6 +38,10 @@ function Inicio() {
             })
     }, [])
 
+    const adicionarNovoVideo = (novoVideo) => {
+        setVideos([...videos, novoVideo])
+      }
+
     return (
         <>
             <Banner categoria={categorias}/>
@@ -47,6 +51,7 @@ function Inicio() {
                     categoria={categoria}
                     videos={videos.filter(video => video.categoria === categoria.nome)}
                 />)}
+                {/* <NovoVideo aoCadastrar={adicionarNovoVideo}/> */}
             </section>
         </>
     )

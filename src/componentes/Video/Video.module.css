@@ -29,12 +29,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 15.5px;
-    margin-bottom: 16px;
+    margin: 0;
 }
 
 .item_opcao {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
 }

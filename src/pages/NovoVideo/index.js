@@ -1,9 +1,10 @@
 import Formulario from 'componentes/Formulario'
 import styles from './NovoVideo.module.css'
 import { useEffect, useState } from 'react'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
+import videos from '../../json/db.json'
 
-function NovoVideo () {
+function NovoVideo() {
 
     const [categorias, setCategorias] = useState([
         {
@@ -29,19 +30,41 @@ function NovoVideo () {
     ])
 
     const [videos, setVideos] = useState([])
+
     useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraplay')
+        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
             .then(resposta => resposta.json())
             .then(dados => {
                 setVideos(dados)
             })
     }, [])
 
+    const adicionarNovoVideo = async (novoVideo) => {
+        try {
+            const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(novoVideo),
+            })
+
+            if (response.ok) {
+                console.log('Vídeo cadastrado com sucesso!')
+                setVideos((prevVideos) => [...prevVideos, novoVideo])
+            } else {
+                console.error('Erro ao cadastrar o vídeo:', response.status)
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error)
+        }
+    }
+
     return (
         <Formulario
-        className={styles.sessaoFormulario} 
-        aoCadastrar={video => setVideos ([...videos, video])}
-        categorias={categorias.map(categoria => categoria.nome)}
+            className={styles.sessaoFormulario}
+            aoCadastrar={adicionarNovoVideo}
+            categorias={categorias.map((categoria) => categoria.nome)}
         />
     )
 }

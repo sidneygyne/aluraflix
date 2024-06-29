@@ -1,7 +1,7 @@
 import Video from 'componentes/Video'
 import styles from './SessaoPorCategoria.module.css'
 
-function SessaoPorCategoria({ videos, categoria }) {
+function SessaoPorCategoria({ videos, categoria, aoCadastrar }) {
     return (
         (videos.length > 0) && <section className={styles.categoria}>
             <h3 style={{ backgroundColor: categoria.cor }}>
@@ -14,6 +14,7 @@ function SessaoPorCategoria({ videos, categoria }) {
                         video={video}
                         key={indice}
                         categoria={categoria}
+                        aoCadastrar={aoCadastrar}
                     />
                 })}
             </div>
