@@ -6,62 +6,72 @@ import Textarea from 'componentes/Textarea'
 import { BotaoFormulario } from 'componentes/Botao'
 import videos from '../../json/db.json'
 import fetch from 'cross-fetch'
-import db from '../../json/db.json'
 
 
 function Formulario({ aoCadastrar, categorias }) {
 
     const [titulo, setTitulo] = useState('')
-    const [descricao, setDescricao] = useState('')
     const [imagem, setImagem] = useState('')
-    const [link, setLink] = useState('')
+    const [video, setVideo] = useState('')
     const [categoria, setCategoria] = useState('')
+    const [descricao, setDescricao] = useState('')
 
-
-    const limparFormulario = () => {
+    const aoSalvar = (evento) => {
+        evento.preventDefault()
+        // console.log('Form foi submetido! => ', titulo, imagem, video, categoria)
+        aoCadastrar({
+            titulo,
+            imagem,
+            video,
+            categoria,
+            descricao
+        })
+        //limpar o formulario apos envio de dados
         setTitulo('')
         setImagem('')
-        setLink('')
+        setVideo('')
         setCategoria('')
         setDescricao('')
     }
 
     const aoSalvar = async (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido! => ', titulo, imagem, link, categoria, descricao)
-
+        console.log('Form foi submetido! => ',titulo, imagem, link, categoria)
         try {
-            const novoVideo = {
+            const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
                 titulo,
                 imagem,
                 link,
                 categoria,
                 descricao,
-            }
-
-
-            const response = await fetch('http://localhost:3000/videos', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(novoVideo),
+              }),
             })
-
+        
             if (response.ok) {
-                console.log('Vídeo cadastrado com sucesso!')
-                limparFormulario()
-                aoCadastrar(novoVideo)
+              console.log('Vídeo cadastrado com sucesso!')
+              limparFormulario()
+              aoCadastrar({
+                titulo,
+                imagem,
+                link,
+                categoria,
+                descricao,
+              })
             } else {
-                console.error('Erro ao cadastrar o vídeo:', response.status);
+              console.error('Erro ao cadastrar o vídeo:', response.status);
             }
-        } catch (error) {
+          } catch (error) {
             console.error('Erro na requisição:', error);
+          }
         }
-    }
 
     return (
-        <form onSubmit={aoSalvar} onReset={limparFormulario} className={styles.formulario} >
+        <form onSubmit={aoSalvar} className={styles.formulario} >
             <div className={styles.cabecalho}>
                 <h1>Novo vídeo</h1>
                 <p>Complete o formulário para criar um novo card de vídeo.</p>
@@ -99,8 +109,8 @@ function Formulario({ aoCadastrar, categorias }) {
                         obrigatorio={true}
                         label="Vídeo"
                         placeholder="URL do vídeo"
-                        valor={link}
-                        aoAlterado={valor => setLink(valor)}
+                        valor={video}
+                        aoAlterado={valor => setVideo(valor)}
                     />
 
                     <Textarea
