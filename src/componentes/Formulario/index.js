@@ -11,25 +11,16 @@ import fetch from 'cross-fetch'
 function Formulario({ aoCadastrar, categorias }) {
 
     const [titulo, setTitulo] = useState('')
-    const [imagem, setImagem] = useState('')
-    const [video, setVideo] = useState('')
-    const [categoria, setCategoria] = useState('')
     const [descricao, setDescricao] = useState('')
+    const [imagem, setImagem] = useState('')
+    const [link, setLink] = useState('')
+    const [categoria, setCategoria] = useState('')
 
-    const aoSalvar = (evento) => {
-        evento.preventDefault()
-        // console.log('Form foi submetido! => ', titulo, imagem, video, categoria)
-        aoCadastrar({
-            titulo,
-            imagem,
-            video,
-            categoria,
-            descricao
-        })
-        //limpar o formulario apos envio de dados
+
+    const limparFormulario = () => {
         setTitulo('')
         setImagem('')
-        setVideo('')
+        setLink('')
         setCategoria('')
         setDescricao('')
     }
@@ -71,7 +62,7 @@ function Formulario({ aoCadastrar, categorias }) {
         }
 
     return (
-        <form onSubmit={aoSalvar} className={styles.formulario} >
+        <form onSubmit={aoSalvar} onReset={limparFormulario} className={styles.formulario} >
             <div className={styles.cabecalho}>
                 <h1>Novo vídeo</h1>
                 <p>Complete o formulário para criar um novo card de vídeo.</p>
@@ -109,8 +100,8 @@ function Formulario({ aoCadastrar, categorias }) {
                         obrigatorio={true}
                         label="Vídeo"
                         placeholder="URL do vídeo"
-                        valor={video}
-                        aoAlterado={valor => setVideo(valor)}
+                        valor={link}
+                        aoAlterado={valor => setLink(valor)}
                     />
 
                     <Textarea

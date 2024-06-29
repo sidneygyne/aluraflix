@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { v4 as uuidv4 } from 'uuid'
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Inicio.module.css'
 import Banner from 'componentes/Banner'
 import SessaoPorCategoria from "componentes/SessaoPorCategoria";
@@ -38,24 +38,21 @@ function Inicio() {
             })
     }, [])
 
+    const adicionarNovoVideo = (novoVideo) => {
+        setVideos([...videos, novoVideo])
+      }
+
     return (
         <>
-            <Banner categoria={categorias} />
+            <Banner categoria={categorias}/>
             <section className={styles.categorias}>
-                {categorias.map((categoria, indice) => (
-                    <SessaoPorCategoria
+                {categorias.map((categoria, indice) => <SessaoPorCategoria
                     key={indice}
                     categoria={categoria}
-                    videos={videos.filter((video) => video.categoria === categoria.nome)}
-
-                    aoVideoSelecionado={setVideoSelecionado}
-                    aoEditarVideoSolicitado={editarVideo}
-                />))}
+                    videos={videos.filter(video => video.categoria === categoria.nome)}
+                />)}
+                {/* <NovoVideo aoCadastrar={adicionarNovoVideo}/> */}
             </section>
-            <ModalEditar
-                video={videoSelecionado}
-                onClose={() => setVideoSelecionado(null)}
-            />
         </>
     )
 }

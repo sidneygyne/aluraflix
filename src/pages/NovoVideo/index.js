@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import videos from '../../json/db.json'
 
-function NovoVideo () {
+function NovoVideo() {
 
     const [categorias, setCategorias] = useState([
         {
@@ -62,9 +62,9 @@ function NovoVideo () {
 
     return (
         <Formulario
-        className={styles.sessaoFormulario} 
-        aoCadastrar={video => setVideos ([...videos, video])}
-        categorias={categorias.map(categoria => categoria.nome)}
+            className={styles.sessaoFormulario}
+            aoCadastrar={adicionarNovoVideo}
+            categorias={categorias.map((categoria) => categoria.nome)}
         />
     )
 }
