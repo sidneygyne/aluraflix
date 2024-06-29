@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useEffect, useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
 import styles from './Inicio.module.css'
 import Banner from 'componentes/Banner'
 import SessaoPorCategoria from "componentes/SessaoPorCategoria";
-import db from '../../json/db.json'
 
 function Inicio() {
 
@@ -31,36 +30,32 @@ function Inicio() {
     ])
 
     const [videos, setVideos] = useState([])
-
     useEffect(() => {
-        const videosWithCategories = db.videos.map((video) => ({
-            ...video,
-            categoria: categorias.find((categoria) => categoria.nome === video.categoria),
-        }));
-        setVideos(videosWithCategories)
-    }, [categorias])
-
-    // console.log(db.videos)
-    // console.log(videos[0].titulo)
-
-    // useEffect(() => {
-    //     fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
-    //         .then(resposta => resposta.json())
-    //         .then(dados => {
-    //             setVideos(dados)
-    //         })
-    // }, [])
+        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
+            .then(resposta => resposta.json())
+            .then(dados => {
+                setVideos(dados)
+            })
+    }, [])
 
     return (
         <>
-            <Banner categoria={categorias}/>
+            <Banner categoria={categorias} />
             <section className={styles.categorias}>
-                {categorias.map((categoria, indice) => <SessaoPorCategoria
+                {categorias.map((categoria, indice) => (
+                    <SessaoPorCategoria
                     key={indice}
                     categoria={categoria}
-                    videos={videos.filter(video => video.categoria === categoria.nome)}
-                />)}
+                    videos={videos.filter((video) => video.categoria === categoria.nome)}
+
+                    aoVideoSelecionado={setVideoSelecionado}
+                    aoEditarVideoSolicitado={editarVideo}
+                />))}
             </section>
+            <ModalEditar
+                video={videoSelecionado}
+                onClose={() => setVideoSelecionado(null)}
+            />
         </>
     )
 }
