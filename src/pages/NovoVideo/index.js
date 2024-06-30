@@ -53,6 +53,7 @@ function NovoVideo() {
                 console.log('Vídeo cadastrado com sucesso!')
                 setVideos((prevVideos) => [...prevVideos, novoVideo])
             } else {
+                const errorData = await response.json()
                 console.error('Erro ao cadastrar o vídeo:', response.status)
             }
         } catch (error) {
