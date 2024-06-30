@@ -1,7 +1,7 @@
 import styles from './Video.module.css'
 import { MdDeleteForever, MdOutlineEdit } from "react-icons/md";
 
-function Video({ video, categoria }) {
+function Video({ video, categoria, aoDeletar }) {
 
     return (
         <div className={styles.container} style={{ borderColor: categoria.cor }}>
@@ -10,7 +10,9 @@ function Video({ video, categoria }) {
                 <div className={styles.divImg} style={{ color: categoria.cor }}></div>
             </div>
             <div className={styles.opcoes}>
-                <div className={styles.item_opcao}>
+                <div className={styles.item_opcao}
+                    onClick={() => aoDeletar(video.id)}
+                    >
                     <MdDeleteForever />
                     <p>DELETAR</p>
                 </div>

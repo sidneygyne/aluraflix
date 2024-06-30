@@ -29,6 +29,7 @@ function Inicio() {
         }
     ])
 
+
     const [videos, setVideos] = useState([])
     useEffect(() => {
         fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
@@ -40,20 +41,25 @@ function Inicio() {
 
     const adicionarNovoVideo = (novoVideo) => {
         setVideos([...videos, novoVideo])
-      }
+    }
+
+    function deletarVideo(id) {
+        setVideos(videos.filter(video => video.id !== id))
+    }
 
     return (
         <>
-            <Banner categoria={categorias}/>
+            <Banner categoria={categorias} />
             <section className={styles.categorias}>
                 {categorias.map((categoria, indice) => <SessaoPorCategoria
                     key={indice}
                     categoria={categoria}
                     videos={videos.filter(video => video.categoria === categoria.nome)}
+                    aoDeletar={deletarVideo}
                 />)}
                 {/* <NovoVideo aoCadastrar={adicionarNovoVideo}/> */}
             </section>
-            
+
         </>
     )
 }
