@@ -29,30 +29,27 @@ function Formulario({ aoCadastrar, categorias }) {
         evento.preventDefault()
         console.log('Form foi submetido! => ',titulo, imagem, link, categoria)
         try {
+            const novoVideo = {
+                titulo,
+                imagem,
+                link,
+                categoria,
+                descricao,
+            }
+
             const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({
-                titulo,
-                imagem,
-                link,
-                categoria,
-                descricao,
-              }),
+              body: JSON.stringify(novoVideo),
             })
         
             if (response.ok) {
               console.log('Vídeo cadastrado com sucesso!')
+              alert('Vídeo cadastrado com sucesso!')
               limparFormulario()
-              aoCadastrar({
-                titulo,
-                imagem,
-                link,
-                categoria,
-                descricao,
-              })
+              aoCadastrar(novoVideo)
             } else {
               console.error('Erro ao cadastrar o vídeo:', response.status);
             }

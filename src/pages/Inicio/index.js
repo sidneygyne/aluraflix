@@ -53,6 +53,7 @@ function Inicio() {
                 />)}
                 {/* <NovoVideo aoCadastrar={adicionarNovoVideo}/> */}
             </section>
+            
         </>
     )
 }

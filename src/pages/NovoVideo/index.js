@@ -39,26 +39,25 @@ function NovoVideo() {
             })
     }, [])
 
-    const adicionarNovoVideo = async (novoVideo) => {
-        try {
-            const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(novoVideo),
+    const adicionarNovoVideo = (novoVideo) => {
+        setVideos((prevVideos) => [...prevVideos, novoVideo])
+        fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(novoVideo),
+        })
+            .then(resposta => {
+                if (resposta.ok) {
+                    console.log('Vídeo cadastrado com sucesso!')
+                } else {
+                    console.error('Erro ao cadastrar o vídeo:', resposta.status)
+                }
             })
-
-            if (response.ok) {
-                console.log('Vídeo cadastrado com sucesso!')
-                setVideos((prevVideos) => [...prevVideos, novoVideo])
-            } else {
-                const errorData = await response.json()
-                console.error('Erro ao cadastrar o vídeo:', response.status)
-            }
-        } catch (error) {
-            console.error('Erro na requisição:', error)
-        }
+            .catch(error => {
+                console.error('Erro na requisição:', error)
+            })
     }
 
     return (
