@@ -1,14 +1,12 @@
-import Video from 'componentes/Video'
 import styles from './ModalEditar.module.css'
 import CampoFormulario from 'componentes/CampoFormulario'
 import Textarea from 'componentes/Textarea'
 import { BotaoFormulario } from 'componentes/Botao'
 import ListaSuspensa from 'componentes/ListaSuspensa'
 import { useEffect, useState } from 'react'
+import { MdOutlineCancel } from "react-icons/md"
 
-// categoria, descricao, id, imagem, link
-
-function ModalEditar({ video, onClose, onSalvar, categorias }) {
+function ModalEditar({ video, aoFechar, aoSalvar, categorias }) {
 
     // console.log(video)
 
@@ -26,7 +24,7 @@ function ModalEditar({ video, onClose, onSalvar, categorias }) {
             setLink(video.link)
             setImagem(video.imagem)
             setCategoria(video.categoria)
-        }  else {
+        } else {
             setTitulo('');
             setDescricao('');
             setLink('');
@@ -44,20 +42,19 @@ function ModalEditar({ video, onClose, onSalvar, categorias }) {
             link,
             imagem,
             categoria
-        };
-        onSalvar(videoAtualizado)
-        onClose()
+        }
+        aoSalvar(videoAtualizado)
+        aoFechar()
     }
-
-
 
     return (
         <dialog open={!!video} className={styles.modal}>
+            <MdOutlineCancel className={styles.iconeFechar} />
             <h1>Editar card</h1>
             <form onSubmit={submit} method="dialog">
                 <div className={styles.sessaoCampos}>
                     <div className={styles.campos}>
-                        <CampoFormulario
+                        <CampoFormulario className={styles.campoModal}
                             obrigatorio={true}
                             label="Título"
                             placeholder="Insira o título"
@@ -80,7 +77,6 @@ function ModalEditar({ video, onClose, onSalvar, categorias }) {
                             placeholder="URL da imagem"
                             valor={imagem}
                             aoAlterado={valor => setImagem(valor)}
-
                         />
 
                         <CampoFormulario
@@ -97,7 +93,6 @@ function ModalEditar({ video, onClose, onSalvar, categorias }) {
                             placeholder="Sobre o que é esse vídeo?"
                             valor={descricao}
                             aoAlterado={valor => setDescricao(valor)}
-
                         />
 
                     </div>
@@ -114,7 +109,7 @@ function ModalEditar({ video, onClose, onSalvar, categorias }) {
                 </div>
             </form>
         </dialog>
-    );
+    )
 }
 
 

@@ -17,7 +17,8 @@
   --corFonteInput: #A5A5A5;
   --corBordaAtivaFormErro: #E53935;
   --corFundoForm: #191919;
-
+  --corModalEscuro: #03122F;
+  --corModalClaro: #2271D1;
 }
 
 body {

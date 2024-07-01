@@ -4,7 +4,7 @@
     font-size: 1.25rem;
     display: flex;
     flex-direction: column;
-    width: 48%;
+    width: 100%;
     gap: 15px;
 }
 

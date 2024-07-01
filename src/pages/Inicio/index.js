@@ -87,8 +87,8 @@ function Inicio() {
             </section>
             <ModalEditar
                 video={videoSelecionado}
-                onClose={fecharModal}
-                onSalvar={atualizarVideo}
+                aoFechar={fecharModal}
+                aoSalvar={atualizarVideo}
                 categorias={categorias.map((categoria) => categoria.nome)} />
         </>
     )
