@@ -3,9 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './Inicio.module.css'
 import Banner from 'componentes/Banner'
 import SessaoPorCategoria from "componentes/SessaoPorCategoria";
+import ModalEditar from "componentes/ModalEditar";
 
 function Inicio() {
 
+    // ESTA DUPLICADO COM A PAGINA DE ADD VIDEO **************************************
     const [categorias, setCategorias] = useState([
         {
             id: uuidv4(),
@@ -47,6 +49,28 @@ function Inicio() {
         setVideos(videos.filter(video => video.id !== id))
     }
 
+    const [videoDaGaleria, setVideoDaGaleria] = useState(videos)
+    const [videoSelecionado, setVideoSelecionado] = useState(null)
+
+
+    const editarVideo = (video) => {
+        setVideoSelecionado(video)
+    }
+
+    const fecharModal = () => {
+        setVideoSelecionado(null)
+    }
+
+    const atualizarVideo = (videoAtualizado) => {
+        setVideos(videos.map(video => {
+            if (video.id === videoAtualizado.id) {
+                return videoAtualizado
+            }
+            return video
+        }))
+        setVideoSelecionado(null)
+    }
+
     return (
         <>
             <Banner categoria={categorias} />
@@ -56,10 +80,16 @@ function Inicio() {
                     categoria={categoria}
                     videos={videos.filter(video => video.categoria === categoria.nome)}
                     aoDeletar={deletarVideo}
+                    onEditar={editarVideo}
+
                 />)}
                 {/* <NovoVideo aoCadastrar={adicionarNovoVideo}/> */}
             </section>
-
+            <ModalEditar
+                video={videoSelecionado}
+                onClose={fecharModal}
+                onSalvar={atualizarVideo}
+                categorias={categorias.map((categoria) => categoria.nome)} />
         </>
     )
 }
