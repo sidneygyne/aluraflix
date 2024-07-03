@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import styles from './Cabecalho.module.css'
 import logo from './logo.png'
-import Botao from 'componentes/Botao'
+import { useState } from 'react'
+import { Botao } from 'componentes/Botao'
+import { useLocation } from 'react-router-dom'
 
 function Cabecalho() {
+
     return (
         <header className={styles.cabecalho}>
             <Link to="./">
@@ -11,7 +14,7 @@ function Cabecalho() {
             </Link>
             
             <nav className={styles.menu}>
-                <Botao  condition="true" url="./">
+                <Botao condition="true" url="./">
                     HOME
                 </Botao>
                 <Botao condition="true" url="./addvideo">

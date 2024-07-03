@@ -3,6 +3,7 @@ import Rodape from "componentes/Rodape";
 import { Outlet } from "react-router-dom";
 
 function PaginaBase() {
+    
     return (
         <main>
             <Cabecalho />
