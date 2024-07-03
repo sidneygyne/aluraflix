@@ -15,7 +15,7 @@
     height: 54px;
 }
 
-.link:focus{
+.link .link:checked + .name{
     color: var(--corFonte_secundaria);
     border-color: var(--corFonte_secundaria);
 }

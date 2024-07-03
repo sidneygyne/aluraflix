@@ -3,7 +3,6 @@ import styles from './Cabecalho.module.css'
 import logo from './logo.png'
 import Botao from 'componentes/Botao'
 
-
 function Cabecalho() {
     return (
         <header className={styles.cabecalho}>

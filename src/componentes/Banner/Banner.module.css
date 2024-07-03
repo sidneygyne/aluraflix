@@ -1,18 +1,4 @@
-:root {
-    --fontePrimaria: 'Roboto', sans-serif;
-    --fonteSecundaria: 'Source Sans 3', sans-serif;
-    --fundo: #262626;
-    --fundoRodape: #000000;
-    --corFonte_primaria: #ffffff; 
-    --corFonte_secundaria:#2271D1;
-    --cor_back: #00C86F;
-    --cor_front: #6BD1FF;
-    --cor_mobile: #FFBA05;
-    --label_active: #E53935;
-    --label: #A5A5A5;
-  }
-  
-.background {
+.fundo {
     width: 100%;
     height: 832px;
     position: relative;
@@ -20,13 +6,33 @@
 
 .container{
     display: flex;
-    position: absolute;
+    position: relative;
     top: 35%;
     left: 5%;
     width: 90%;
     height: auto;
     gap: 50px;
-    
+}
+
+.previosAndNex {
+    font-size: 100px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 30%;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+}
+
+.icone {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.icone:hover {
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 .minibanner {
@@ -34,7 +40,17 @@
     color: var(--corFonte_secundaria);
     width: 646px; 
     height: 333px;
+    position: relative;
     box-shadow: inset var(--corFonte_secundaria) 0px 0px 12px -4px;
+}
+
+.divImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 17px 8px;
 }
 
 
@@ -68,3 +84,4 @@ iframe {
     font-weight: 300;
     margin: 0;
 }
+

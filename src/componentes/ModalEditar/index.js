@@ -6,7 +6,7 @@ import ListaSuspensa from 'componentes/ListaSuspensa'
 import { useEffect, useState } from 'react'
 import { MdOutlineCancel } from "react-icons/md"
 
-function ModalEditar({ video, aoFechar, aoSalvar, categorias }) {
+function ModalEditar({ video, aoFechar, aoSalvar, aoFecharModal, categorias }) {
 
     // console.log(video)
 
@@ -49,7 +49,7 @@ function ModalEditar({ video, aoFechar, aoSalvar, categorias }) {
 
     return (
         <dialog open={!!video} className={styles.modal}>
-            <MdOutlineCancel className={styles.iconeFechar} />
+            <MdOutlineCancel onClick={aoFecharModal} className={styles.iconeFechar} />
             <h1>Editar card</h1>
             <form onSubmit={submit} method="dialog">
                 <div className={styles.sessaoCampos}>

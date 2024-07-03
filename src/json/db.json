@@ -1,5 +1,5 @@
-{
-    "aluraflix": [
+
+   [
         {
           "id": 1,
           "titulo": "O que faz uma desenvolvedora front-end?",
@@ -121,4 +121,3 @@
           "id": 15
         }
       ]
-    }

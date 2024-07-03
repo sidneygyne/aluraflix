@@ -1,4 +1,4 @@
-.link {
+.botao {
     text-decoration: none;
     background-color: transparent;
     color: var(--corFonte_primaria);
@@ -16,7 +16,7 @@
     height: 54px;
 }
 
-.link:focus{
+.botaoDestaque{
     color: var(--corFonte_secundaria);
     border-color: var(--corFonte_secundaria);
 }

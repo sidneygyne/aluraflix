@@ -49,7 +49,7 @@ function Inicio() {
         setVideos(videos.filter(video => video.id !== id))
     }
 
-    const [videoDaGaleria, setVideoDaGaleria] = useState(videos)
+    // const [videoDaGaleria, setVideoDaGaleria] = useState(videos)
     const [videoSelecionado, setVideoSelecionado] = useState(null)
 
 
@@ -89,6 +89,7 @@ function Inicio() {
                 video={videoSelecionado}
                 aoFechar={fecharModal}
                 aoSalvar={atualizarVideo}
+                aoFecharModal={fecharModal}
                 categorias={categorias.map((categoria) => categoria.nome)} />
         </>
     )

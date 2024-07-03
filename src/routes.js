@@ -4,6 +4,7 @@ import NovoVideo from "pages/NovoVideo";
 import PaginaBase from "pages/PaginaBase";
 
 function AppRoutes() {
+
   return (
     <BrowserRouter>
       <Routes>
