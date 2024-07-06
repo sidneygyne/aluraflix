@@ -4,59 +4,52 @@ import { useState } from 'react'
 import ListaSuspensa from 'componentes/ListaSuspensa'
 import Textarea from 'componentes/Textarea'
 import { BotaoFormulario } from 'componentes/Botao'
-import videos from '../../json/db.json'
 import fetch from 'cross-fetch'
-
+import { api } from "api"
 
 function Formulario({ aoCadastrar, categorias }) {
 
-    const [titulo, setTitulo] = useState('')
-    const [descricao, setDescricao] = useState('')
-    const [imagem, setImagem] = useState('')
-    const [link, setLink] = useState('')
-    const [categoria, setCategoria] = useState('')
-
+    const [formData, setFormData] = useState({
+        titulo: '',
+        descricao: '',
+        imagem: '',
+        link: '',
+        categoria: '',
+    })
 
     const limparFormulario = () => {
-        setTitulo('')
-        setImagem('')
-        setLink('')
-        setCategoria('')
-        setDescricao('')
+        setFormData({
+            titulo: '',
+            descricao: '',
+            imagem: '',
+            link: '',
+            categoria: '',
+        })
     }
 
     const aoSalvar = async (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido! => ',titulo, imagem, link, categoria)
+        // console.log('Form foi submetido! => ',titulo, imagem, link, categoria, descricao)
         try {
-            const novoVideo = {
-                titulo,
-                imagem,
-                link,
-                categoria,
-                descricao,
-            }
-
-            const response = await fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(novoVideo),
+            const response = await fetch(api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             })
-        
+
             if (response.ok) {
-              console.log('Vídeo cadastrado com sucesso!')
-              alert('Vídeo cadastrado com sucesso!')
-              limparFormulario()
-              aoCadastrar(novoVideo)
-            } else {
-              console.error('Erro ao cadastrar o vídeo:', response.status);
+                console.log('Vídeo cadastrado com sucesso!')
+                alert('Vídeo cadastrado com sucesso!')
+                limparFormulario()
+                aoCadastrar(formData)
             }
-          } catch (error) {
-            console.error('Erro na requisição:', error);
-          }
+        } catch (error) {
+            console.error('Erro na requisição:', error)
+            alert('Erro no cadastro!')
         }
+    }
 
     return (
         <form onSubmit={aoSalvar} onReset={limparFormulario} className={styles.formulario} >
@@ -72,8 +65,11 @@ function Formulario({ aoCadastrar, categorias }) {
                         obrigatorio={true}
                         label="Título"
                         placeholder="Insira o título"
-                        valor={titulo}
-                        aoAlterado={valor => setTitulo(valor)}
+                        valor={formData.titulo}
+                        aoAlterado={(valor) => setFormData({ ...formData, titulo: valor })}
+                        tipo="text"
+                        minLength="3"
+                        maxLength=""
                     />
 
                     <ListaSuspensa
@@ -81,32 +77,38 @@ function Formulario({ aoCadastrar, categorias }) {
                         label="Categoría"
                         placeholder="Selecione uma categoía..."
                         itens={categorias}
-                        valor={categoria}
-                        aoAlterado={valor => setCategoria(valor)}
+                        valor={formData.categoria}
+                        aoAlterado={(valor) => setFormData({ ...formData, categoria: valor })}
+
                     />
 
                     <CampoFormulario
                         obrigatorio={true}
                         label="Imagem"
                         placeholder="URL da imagem"
-                        valor={imagem}
-                        aoAlterado={valor => setImagem(valor)}
+                        valor={formData.imagem}
+                        aoAlterado={(valor) => setFormData({ ...formData, imagem: valor })}
+                        tipo="url"
                     />
 
                     <CampoFormulario
                         obrigatorio={true}
                         label="Vídeo"
                         placeholder="URL do vídeo"
-                        valor={link}
-                        aoAlterado={valor => setLink(valor)}
+                        valor={formData.link}
+                        aoAlterado={(valor) => setFormData({ ...formData, link: valor })}
+                        tipo="url"
                     />
 
                     <Textarea
                         obrigatorio={true}
                         label="Descrição"
                         placeholder="Sobre o que é esse vídeo?"
-                        valor={descricao}
-                        aoAlterado={valor => setDescricao(valor)}
+                        valor={formData.descricao}
+                        aoAlterado={(valor) => setFormData({ ...formData, descricao: valor })}
+                        tipo="text"
+                        minLength="10"
+                        maxLength="250"
                     />
 
                 </div>

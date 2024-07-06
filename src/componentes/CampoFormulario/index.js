@@ -1,7 +1,8 @@
 import styles from './CampoFormulario.module.css'
 
-//
-function CampoFormulario({ type = 'text', placeholder, label, valor, obrigatorio = false, aoAlterado }) {
+function CampoFormulario(
+    { tipo, maxlength, minlength, placeholder, label, valor, obrigatorio = false, aoAlterado }
+) {
 
     const placeholderModificada = `${placeholder}...`
 
@@ -9,18 +10,21 @@ function CampoFormulario({ type = 'text', placeholder, label, valor, obrigatorio
         aoAlterado(evento.target.value)
     }
 
-        return (
-            <div className={styles.campo} >
-                <label>{label}</label>
-                <input
-                    className={styles.campoInput}
-                    type={type}
-                    value={valor}
-                    onChange={aoDigitado}
-                    required={obrigatorio}
-                    placeholder={placeholderModificada} />
-            </div>
-        )
-    }
+    return (
+        <div className={styles.campo} >
+            <label>{label}</label>
+            <input
+                className={styles.campoInput}
+                type={tipo}
+                minLength={minlength}
+                maxLength={maxlength}
+                value={valor}
+                onChange={aoDigitado}
+                required={obrigatorio}
+                placeholder={placeholderModificada}
+            />
+        </div>
+    )
+}
 
-    export default CampoFormulario
+export default CampoFormulario

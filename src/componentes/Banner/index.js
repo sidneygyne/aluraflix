@@ -1,6 +1,5 @@
 import styles from './Banner.module.css'
-import video from '../../json/db.json'
-// import categorias from '../../json/categorias.json'
+import video from '../../json/destaques.json'
 import { useEffect, useState } from 'react'
 import { FcPrevious } from "react-icons/fc"
 import { FcNext } from "react-icons/fc"
@@ -10,13 +9,15 @@ function Banner({ categoria }) {
 
     const [currentIndex, setCurrentIndex] = useState(0)
 
+    const sortearVideo = video.sort(() => Math.random() - 0.5)
+
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % video.length);
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % sortearVideo.length);
         }, 5000)
 
         return () => clearInterval(interval)
-    }, [])
+    }, [sortearVideo])
 
     const nextItem = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % video.length);
@@ -54,13 +55,13 @@ function Banner({ categoria }) {
 
                 <div className={styles.container}>
                     <div>
-                        <h1 style={{ backgroundColor: '#568987' }} >{currentItem.categoria}</h1>
+                        <h1 style={{ backgroundColor: currentItem.cor }} >{currentItem.categoria}</h1>
                         <h2>{currentItem.titulo}</h2>
                         <p>{currentItem.descricao}</p>
                     </div>
-                    <div className={styles.minibanner}>
-                        <img alt='' src={currentItem.imagem} width="646" height="333" ></img>
-                        <div className={styles.divImg} style={{ color: categoria.cor }}></div>
+                    <div className={styles.minibanner} style={{color: currentItem.cor}}>
+                        <img alt={currentItem.titulo} src={currentItem.imagem} width="646" height="333" ></img>
+                        <div className={styles.divImg} style={{ color: currentItem.cor }}></div>
                         {/* <iframe
                             width="646" height="333" src="https://www.youtube.com/embed/ZY3-MFxVdEw?si=eSflmQqCVrGWz961" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
                     </div>

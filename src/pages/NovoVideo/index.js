@@ -1,38 +1,15 @@
 import Formulario from 'componentes/Formulario'
 import styles from './NovoVideo.module.css'
 import { useEffect, useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import videos from '../../json/db.json'
+import categorias from '../../json/categorias.json'
+import { api } from 'api'
 
 function NovoVideo() {
-
-    const [categorias, setCategorias] = useState([
-        {
-            id: uuidv4(),
-            nome: 'FRONT END',
-            cor: '#6BD1FF',
-        },
-        {
-            id: uuidv4(),
-            nome: 'BACK END',
-            cor: '#00C86F',
-        },
-        {
-            id: uuidv4(),
-            nome: 'INOVAÇÃO',
-            cor: '#FFBA05',
-        },
-        {
-            id: uuidv4(),
-            nome: 'GESTÃO',
-            cor: '#F96DC3',
-        }
-    ])
 
     const [videos, setVideos] = useState([])
 
     useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
+        fetch(api)
             .then(resposta => resposta.json())
             .then(dados => {
                 setVideos(dados)
@@ -41,23 +18,6 @@ function NovoVideo() {
 
     const adicionarNovoVideo = (novoVideo) => {
         setVideos((prevVideos) => [...prevVideos, novoVideo])
-        fetch('https://json-server-rho-lovat.vercel.app/aluraflix', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(novoVideo),
-        })
-            .then(resposta => {
-                if (resposta.ok) {
-                    console.log('Vídeo cadastrado com sucesso!')
-                } else {
-                    console.error('Erro ao cadastrar o vídeo:', resposta.status)
-                }
-            })
-            .catch(error => {
-                console.error('Erro na requisição:', error)
-            })
     }
 
     return (

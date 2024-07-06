@@ -9,8 +9,8 @@
 }
 
 .campoInput {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
+    padding-right: 2px;
     border: 3px solid var(--fundo);
     border-radius: 10px;
     background-color: transparent;
@@ -18,6 +18,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     font-family: var(--fonteSecundaria);
+    outline: 0;
 }
 
 .campoInput:focus {

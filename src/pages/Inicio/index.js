@@ -1,55 +1,26 @@
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useEffect, useState } from "react"
 import styles from './Inicio.module.css'
 import Banner from 'componentes/Banner'
-import SessaoPorCategoria from "componentes/SessaoPorCategoria";
-import ModalEditar from "componentes/ModalEditar";
+import SessaoPorCategoria from "componentes/SessaoPorCategoria"
+import ModalEditar from "componentes/ModalEditar"
+import categorias from '../../json/categorias.json'
+import { api } from "api"
 
 function Inicio() {
 
-    // ESTA DUPLICADO COM A PAGINA DE ADD VIDEO **************************************
-    const [categorias, setCategorias] = useState([
-        {
-            id: uuidv4(),
-            nome: 'FRONT END',
-            cor: '#6BD1FF',
-        },
-        {
-            id: uuidv4(),
-            nome: 'BACK END',
-            cor: '#00C86F',
-        },
-        {
-            id: uuidv4(),
-            nome: 'INOVAÇÃO',
-            cor: '#FFBA05',
-        },
-        {
-            id: uuidv4(),
-            nome: 'GESTÃO',
-            cor: '#F96DC3',
-        }
-    ])
-
-
     const [videos, setVideos] = useState([])
     useEffect(() => {
-        fetch('https://json-server-rho-lovat.vercel.app/aluraflix')
+        fetch(api)
             .then(resposta => resposta.json())
             .then(dados => {
                 setVideos(dados)
             })
     }, [])
 
-    const adicionarNovoVideo = (novoVideo) => {
-        setVideos([...videos, novoVideo])
-    }
-
     function deletarVideo(id) {
         setVideos(videos.filter(video => video.id !== id))
     }
 
-    // const [videoDaGaleria, setVideoDaGaleria] = useState(videos)
     const [videoSelecionado, setVideoSelecionado] = useState(null)
 
 
@@ -81,9 +52,7 @@ function Inicio() {
                     videos={videos.filter(video => video.categoria === categoria.nome)}
                     aoDeletar={deletarVideo}
                     onEditar={editarVideo}
-
                 />)}
-                {/* <NovoVideo aoCadastrar={adicionarNovoVideo}/> */}
             </section>
             <ModalEditar
                 video={videoSelecionado}

@@ -1,7 +1,9 @@
 import styles from './TextareaFormulario.module.css'
 
 //
-function Textarea({ type = 'text', placeholder, label, valor, obrigatorio = false, aoAlterado }) {
+function Textarea(
+    { tipo, minlength, maxlength, placeholder, label, valor, obrigatorio = false, aoAlterado }
+) {
 
     const placeholderModificada = `${placeholder}...`
 
@@ -9,17 +11,19 @@ function Textarea({ type = 'text', placeholder, label, valor, obrigatorio = fals
         aoAlterado(evento.target.value)
     }
 
-        return (
-            <div className={styles.textarea} >
-                <label>{label}</label>
-                <textarea className={styles.campoInput}
-                    type={type}
-                    value={valor}
-                    onChange={aoDigitado}
-                    required={obrigatorio}
-                    placeholder={placeholderModificada} />
-            </div>
-        )
-    }
+    return (
+        <div className={styles.textarea} >
+            <label>{label}</label>
+            <textarea className={styles.campoInput}
+                type={tipo}
+                minLength={minlength}
+                maxLength={maxlength}
+                value={valor}
+                onChange={aoDigitado}
+                required={obrigatorio}
+                placeholder={placeholderModificada} />
+        </div>
+    )
+}
 
-    export default Textarea
+export default Textarea

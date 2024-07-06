@@ -1,4 +1,4 @@
-import styles from './BotaoIcone.module.css'
+
 
 function BotaoIcone () {
     
