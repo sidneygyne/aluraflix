@@ -6,16 +6,29 @@
     padding: 42.5px;
     gap: 10px;
     border-bottom: 4px solid var(--corFonte_secundaria);
-
 }
 
 .menu {
     display: inline-flex;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
 .logo {
     margin-top: 10px;
     display: inline-flex;
+}
+
+
+
+@media (max-width: 767px) {
+    .cabecalho {
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu {}
 }

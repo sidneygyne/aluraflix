@@ -14,10 +14,8 @@
     text-align: center;
     border: transparent;
     border-radius: 15px;
-    width: 25%;
-    max-width: none;
     padding: 20px;
-    display: inline;
+    width: 432px;
     margin-top: 0;
     margin-bottom: 42px;
 }
@@ -30,4 +28,21 @@
     scrollbar-color: #999 #333;
     
     
+}
+
+
+@media (max-width: 1023px) {
+    .categoria h3 {
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 767px) {
+    .categoria h3 {
+        margin-left: 0;
+    }
+  
+}
+@media (max-width: 400px) {
+ 
 }

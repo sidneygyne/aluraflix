@@ -5,6 +5,7 @@ import SessaoPorCategoria from "componentes/SessaoPorCategoria"
 import ModalEditar from "componentes/ModalEditar"
 import categorias from '../../json/categorias.json'
 import { api } from "api"
+import ModalPlay from "componentes/ModalPlay"
 
 function Inicio() {
 
@@ -40,6 +41,7 @@ function Inicio() {
             return video
         }))
         setVideoSelecionado(null)
+        
     }
 
     return (

@@ -30,14 +30,14 @@ function Banner({ categoria }) {
     const currentItem = video[currentIndex];
 
     return (
-        <section>
+        <section className={styles.container}>
             <div
                 className={styles.fundo}
                 // width="1442"
                 // height="832"
                 style={{
-                    width: '1442px',
-                    height: '832px',
+  
+                 
                     backgroundImage: `linear-gradient(to bottom,
                         rgba(0, 0, 0, 0.56),
                         rgba(0, 0, 0, 0.56)),
@@ -53,14 +53,14 @@ function Banner({ categoria }) {
                     <FcNext onClick={nextItem} className={styles.icone} />
                 </div>
 
-                <div className={styles.container}>
+                <div className={styles.item}>
                     <div>
                         <h1 style={{ backgroundColor: currentItem.cor }} >{currentItem.categoria}</h1>
                         <h2>{currentItem.titulo}</h2>
                         <p>{currentItem.descricao}</p>
                     </div>
                     <div className={styles.minibanner} style={{color: currentItem.cor}}>
-                        <img alt={currentItem.titulo} src={currentItem.imagem} width="646" height="333" ></img>
+                        <img className={styles.imagem} alt={currentItem.titulo} src={currentItem.imagem} ></img>
                         <div className={styles.divImg} style={{ color: currentItem.cor }}></div>
                         {/* <iframe
                             width="646" height="333" src="https://www.youtube.com/embed/ZY3-MFxVdEw?si=eSflmQqCVrGWz961" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
