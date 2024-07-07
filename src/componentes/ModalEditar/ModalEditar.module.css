@@ -1,3 +1,11 @@
+.overley {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;  
+}
 .modal {
     width: 50%;
     background-color: var(--corModalEscuro);
@@ -6,7 +14,6 @@
     padding-bottom: 84px;
     padding-top: 84px;
     border: 5px solid var(--corModalClaro);
-    justify-content: space-between;
     position: absolute;
     top: 1050px;
 }
@@ -23,7 +30,7 @@
 }
 
 .sessaoCampos h2 {
-    font-size: 2.25rem ;
+    font-size: 2.25rem;
     font-weight: 600;
     font-family: var(--fonteSecundaria);
     margin: 0;
@@ -46,7 +53,7 @@
 }
 
 
-label{
+label {
     color: var(--corFonte_primaria);
 }
 
@@ -58,5 +65,45 @@ label{
     top: 3%;
     left: 93%;
     bottom: 95%;
-  
+
+}
+
+
+@media (max-width: 1023px) {
+    .modal {
+        width: auto;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .iconeFechar {
+        left: 90%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .modal {
+        width: auto;
+        margin-left: 27px;
+        margin-right: 27px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 60px;
+        padding-top: 60px;
+
+    }
+
+    .modal h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .botoes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

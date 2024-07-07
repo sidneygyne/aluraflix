@@ -39,3 +39,19 @@
     gap: 20px;
     cursor: pointer;
 }
+
+
+@media (max-width: 767px) {
+    .container {
+        width: 373px;
+        height: 320px;
+    }
+    
+    .imagem {
+        width: 373px;
+        height: 260px;
+    }
+}
+@media (max-width: 400px) {
+ 
+}

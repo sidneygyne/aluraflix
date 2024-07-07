@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
     padding: 42.5px;
     gap: 10px;
     border-bottom: 4px solid var(--corFonte_secundaria);
@@ -23,7 +22,9 @@
 
 @media (max-width: 767px) {
     .cabecalho {
+        padding: 15px;
         justify-content: center;
+
     }
 
     .logo {

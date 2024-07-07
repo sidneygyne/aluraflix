@@ -22,8 +22,7 @@
     font-size: 1.25rem;
     font-weight: 400;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     text-transform: uppercase;
 }
 
@@ -57,4 +56,42 @@
 }
 
 
+@media (max-width: 1023px) {
+    .cabecalho h1 {
+        font-size: 2.5rem;
+    }
+    .sessaoCampos {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+.cabecalho p {
+    font-size: 1rem;
+}
 
+.sessaoCampos h2 {
+    font-size: 2rem ;
+    font-weight: 600;
+    font-family: var(--fonteSecundaria);
+    margin: 0;
+    padding-bottom: 60px;
+}
+}
+
+@media (max-width: 767px) {
+    .sessaoCampos {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media (max-width: 400px) {
+ 
+}
+
+
+@media (max-width: 767px) {
+  
+}
+@media (max-width: 400px) {
+ 
+}
