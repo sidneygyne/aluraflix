@@ -18,18 +18,13 @@
     display: inline-flex;
 }
 
-
-
 @media (max-width: 767px) {
     .cabecalho {
         padding: 15px;
         justify-content: center;
-
     }
 
     .logo {
         display: none;
     }
-
-    .menu {}
 }
