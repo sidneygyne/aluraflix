@@ -41,7 +41,6 @@ function Inicio() {
             return video
         }))
         setVideoSelecionado(null)
-        
     }
 
     return (

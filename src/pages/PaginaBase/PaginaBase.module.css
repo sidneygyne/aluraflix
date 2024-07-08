@@ -1,0 +1,11 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 767px) {
+    main :nth-child(1) {order: 1;}
+    .rodape {
+        display: none;
+    }
+}
