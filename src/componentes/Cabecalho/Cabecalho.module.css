@@ -29,14 +29,10 @@
         border-top: 4px solid var(--corFonte_secundaria);
         box-shadow: 0px -5px 29px 0px var(--boxShadow);
         border-bottom: none;
-    }
-
-    .menu {
-        flex-direction: row-reverse;
+        order: 2;
     }
 
     .logo {
         display: none;
-
     }
 }

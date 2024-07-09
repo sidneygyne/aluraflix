@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom"
 function PaginaBase() {
     
     return (
-        <main className={styles.pagina }>
+        <main>
             <Cabecalho />
             <Outlet  />
             <Rodape />
