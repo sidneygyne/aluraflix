@@ -1,0 +1,39 @@
+.container {
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+
+.video {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.titulo {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 2.5rem;
+}
+
+
+@media (max-width: 1023px) {
+    .titulo {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .titulo {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 400px) {
+    .titulo {
+        font-size: 1rem;
+    }
+}
+

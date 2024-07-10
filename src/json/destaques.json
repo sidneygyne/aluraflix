@@ -13,7 +13,7 @@
     "titulo": "Guia de carreira Front-end",
     "descricao": "Nesse episódio, confira o que é front-end e como seguir nessa área da tecnologia, através do Tech Guide front-end, um Guia de Estudos do iniciante ao avançado.",
     "imagem": "https://i.ytimg.com/vi/fpth65ts3cw/hqdefault.jpg",
-    "link": "https://www.youtube.com/embed/fpth65ts3cw?",
+    "link": "https://www.youtube.com/embed/fpth65ts3cw",
     "categoria": "FRONT END",
     "cor": "#6BD1FF"
   },
@@ -22,7 +22,7 @@
     "titulo": "Métricas para o Front End com Mario Souto",
     "descricao": "Neste vídeo o Paulo Silveira e o @DevSoutinho batem um papo sobre as métricas que não podem ser esquecidas em um bom site.",
     "imagem": "https://i.ytimg.com/vi/iVNR-6v8lZU/maxresdefault.jpg",
-    "link": "https://www.youtube.com/embed/iVNR-6v8lZU?s",
+    "link": "https://www.youtube.com/embed/iVNR-6v8lZU",
     "categoria": "FRONT END",
     "cor": "#6BD1FF"
   },
@@ -94,7 +94,7 @@
     "titulo": "Diferentes carreiras em tecnologia",
     "descricao": "Conheça várias das mais diversas carreiras dentro da área de tecnologia, além de programação, e aproveite também para conhecer a EBAC, que inclusive oferece diversos cursos dessas profissões comentadas no vídeo!",
     "imagem": "https://i.ytimg.com/vi/3gPZ02Iqr-0/maxresdefault.jpg",
-    "link": "https://www.youtube.com/embed/3gPZ02Iqr-0?si",
+    "link": "https://www.youtube.com/embed/3gPZ02Iqr-0",
     "categoria": "GESTÃO",
     "cor": "#F96DC3"
   },

@@ -23,6 +23,7 @@ function Inicio() {
     }
 
     const [videoSelecionado, setVideoSelecionado] = useState(null)
+    const [videoVer, setVideoVer] = useState(null)
 
 
     const editarVideo = (video) => {
@@ -31,6 +32,7 @@ function Inicio() {
 
     const fecharModal = () => {
         setVideoSelecionado(null)
+        setVideoVer(null)
     }
 
     const atualizarVideo = (videoAtualizado) => {
@@ -43,6 +45,13 @@ function Inicio() {
         setVideoSelecionado(null)
     }
 
+    const verVideo = (video) => {
+        setVideoVer(video)
+    }
+
+    // console.log( videoVer)
+    // console.log(videoSelecionado)
+
     return (
         <>
             <Banner categoria={categorias} />
@@ -53,14 +62,17 @@ function Inicio() {
                     videos={videos.filter(video => video.categoria === categoria.nome)}
                     aoDeletar={deletarVideo}
                     onEditar={editarVideo}
+                    onVerVideo={verVideo}
                 />)}
             </section>
             <ModalEditar
                 video={videoSelecionado}
-                aoFechar={fecharModal}
                 aoSalvar={atualizarVideo}
                 aoFecharModal={fecharModal}
                 categorias={categorias.map((categoria) => categoria.nome)} />
+            <ModalPlay 
+                video={videoVer}
+                aoFecharModal={fecharModal} />
         </>
     )
 }

@@ -103,7 +103,11 @@ iframe {
     }
     .imagem {
         width: 450px;
-        height: 333px
+        height: 290px
+    }
+    .minibanner {
+        width: 646px; 
+        height: 290px;
     }
     .previosAndNex {
         font-size: 65px;

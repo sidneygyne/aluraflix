@@ -12,13 +12,11 @@ export const Botao = ({ url, children }) => {
         if(url === './') {
             classeBotao = styles.botaoDestacado
         } else { classeBotao = styles.botao }
-    } else {
-        if (paginaAtual.pathname === '/addvideo') {
+    } else if (paginaAtual.pathname === '/addvideo') {
             if(url === './addvideo') {
                 classeBotao = styles.botaoDestacado
             } else { classeBotao = styles.botao }
-        }
-    } 
+        } else classeBotao = styles.botao
 
     return (
         <Link to={url} className={classeBotao}>
