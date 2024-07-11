@@ -8,6 +8,7 @@
 }
 
 .modal {
+
     width: 50%;
     background-color: var(--corModalEscuro);
     padding-left: 200px;
@@ -16,7 +17,7 @@
     padding-top: 84px;
     border: 5px solid var(--corModalClaro);
     position: absolute;
-    top: 1050px;
+    top: 150px;
 }
 
 

@@ -44,7 +44,7 @@ function ModalEditar({ video, aoFechar, aoSalvar, aoFecharModal, categorias }) {
             categoria
         }
         aoSalvar(videoAtualizado)
-        aoFechar()
+        aoFecharModal()
     }
 
     return (

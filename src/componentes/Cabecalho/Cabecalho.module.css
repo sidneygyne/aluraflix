@@ -5,6 +5,7 @@
     padding: 42.5px;
     gap: 10px;
     border-bottom: 4px solid var(--corFonte_secundaria);
+    box-shadow: 0px 7px 29px 0px var(--boxShadow);
 }
 
 .menu {

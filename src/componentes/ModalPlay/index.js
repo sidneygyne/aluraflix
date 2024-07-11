@@ -21,12 +21,10 @@ function ModalPlay({ video, aoFecharModal }) {
                         <MdOutlineCancel onClick={aoFecharModal} className={styles.iconeFechar} />
                         </div>
                     </form>
-                    
+                
                 </div>
-
             </>}
         </>
-
     )
 }
 

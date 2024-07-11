@@ -49,20 +49,20 @@ function Inicio() {
         setVideoVer(video)
     }
 
-    // console.log( videoVer)
-    // console.log(videoSelecionado)
-
     return (
         <>
-            <Banner categoria={categorias} />
+            <Banner 
+                categoria={categorias}
+                aoVerVideo={verVideo} 
+            />
             <section className={styles.categorias}>
                 {categorias.map((categoria, indice) => <SessaoPorCategoria
                     key={indice}
                     categoria={categoria}
                     videos={videos.filter(video => video.categoria === categoria.nome)}
                     aoDeletar={deletarVideo}
-                    onEditar={editarVideo}
-                    onVerVideo={verVideo}
+                    aoEditar={editarVideo}
+                    aoVerVideo={verVideo}
                 />)}
             </section>
             <ModalEditar

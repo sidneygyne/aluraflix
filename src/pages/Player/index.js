@@ -25,9 +25,10 @@ function Player() {
         return (<NaoEncontrada />)
     }
     return (
-        <>
+        <section className={styles.conteudo}>
             <h1 className={styles.titulo}>{video.titulo}</h1>
-            <section className={styles.container}>
+            <p className={styles.descricao}>{video.descricao}</p>
+            <div className={styles.containerVideo}>
                 <iframe className={styles.video}
                     width="100%"
                     height="100%"
@@ -35,8 +36,8 @@ function Player() {
                     title={video.titulo}
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen="" ></iframe>
-            </section>
-        </>
+            </div>
+        </section>
     )
 }
 
