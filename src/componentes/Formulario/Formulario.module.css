@@ -79,8 +79,8 @@
 
 @media (max-width: 767px) {
     .formulario {
-        padding-bottom: 20px;
-        padding-top: 20px;
+        padding-bottom: 90px;
+        padding-top: 40px;
     }
     .sessaoCampos {
         padding-left: 30px;
@@ -93,6 +93,9 @@
 
 
 @media (max-width: 500px) {
+    .formulario {
+        padding-bottom: 150px;
+    }
     .sessaoCampos {
         padding-left: 10px;
         padding-right: 10px;
