@@ -49,7 +49,12 @@ function Inicio() {
         setVideoVer(video)
     }
 
-    console.log(videoVer)
+    const [topoPagina, setTopoPagina] = useState(false)
+
+    const irAoTopo = () => {
+        setTopoPagina(true)
+        window.scrollTo(0, 0)
+    }
 
     return (
         <>
@@ -65,6 +70,7 @@ function Inicio() {
                     aoDeletar={deletarVideo}
                     aoEditar={editarVideo}
                     aoVerVideo={verVideo}
+                    aoTopo={irAoTopo}
                 />)}
             </section>
             <ModalEditar

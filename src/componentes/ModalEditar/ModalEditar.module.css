@@ -80,7 +80,9 @@ label {
     }
 
     .iconeFechar {
+        top: 2%;
         left: 90%;
+        font-size: 45px;
     }
 
 }
@@ -99,6 +101,21 @@ label {
 
     .modal h1 {
         font-size: 2rem;
+    }
+
+    .iconeFechar {
+        top: 2%;
+        left: 89%;
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .iconeFechar {
+        top: 1%;
+        left: 85%;
+        font-size: 40px;
     }
 }
 

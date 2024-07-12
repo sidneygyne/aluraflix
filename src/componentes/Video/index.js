@@ -3,14 +3,14 @@ import styles from './Video.module.css'
 import { MdDeleteForever, MdOutlineEdit, MdReadMore } from "react-icons/md"
 import { useState } from 'react';
 
-function Video({ video, categoria, aoDeletar, aoEditar, aoVerVideo }) {
+function Video({ video, categoria, aoDeletar, aoEditar, aoVerVideo, aoTopo }) {
 
     const [topoPagina, setTopoPagina] = useState(false)
 
     const irAoTopo = () => {
         setTopoPagina(true)
         window.scrollTo(0, 0)
-    };
+    }
 
     return (
         <div className={styles.container} style={{ borderColor: categoria.cor }}>
@@ -26,14 +26,14 @@ function Video({ video, categoria, aoDeletar, aoEditar, aoVerVideo }) {
                     <p>Deletar</p>
                 </div>
                 <div className={styles.item_opcao}
-                    onClick={() => {aoEditar(video); irAoTopo();}} 
+                    onClick={() => {aoEditar(video); aoTopo();}} 
                 
                 >
                     <MdOutlineEdit />
                     <p>Editar</p>
                 </div>
 
-                <Link to={`/${video.id}`} className={styles.item_opcao}>
+                <Link to={`/${video.id}`}  onClick={() => {aoTopo()}}  className={styles.item_opcao}>
                     <MdReadMore />
                     <p>Sobre</p>
                 </Link>
