@@ -19,9 +19,15 @@
     display: inline-flex;
 }
 
+@media (max-width: 1023px) {
+    .cabecalho {
+        padding: 20px;
+    }
+}
+
 @media (max-width: 767px) {
     .cabecalho {
-        padding: 15px;
+        padding: 10px;
         justify-content: center;
         position: sticky;
         bottom: 0;
@@ -33,7 +39,11 @@
         order: 2;
     }
 
+    .menu{
+        justify-content:center;
+    }
     .logo {
         display: none;
     }
+
 }

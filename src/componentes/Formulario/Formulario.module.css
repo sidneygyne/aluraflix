@@ -47,6 +47,7 @@
 
 .botoes {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     padding-top: 60px;
 }
@@ -59,6 +60,8 @@
     .sessaoCampos {
         padding-left: 50px;
         padding-right: 50px;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
     
 .cabecalho p {
@@ -75,8 +78,24 @@
 }
 
 @media (max-width: 767px) {
+    .formulario {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
     .sessaoCampos {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .botoes{
+        justify-content:center;
+    }
 }
+
+
+@media (max-width: 500px) {
+    .sessaoCampos {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+

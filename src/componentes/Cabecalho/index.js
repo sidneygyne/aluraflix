@@ -4,7 +4,7 @@ import logo from './logo.png'
 import { Botao } from 'componentes/Botao'
 
 function Cabecalho() {
-
+    
     return (
         <header className={styles.cabecalho}>
             <Link to="./">
@@ -12,10 +12,10 @@ function Cabecalho() {
             </Link>
 
             <nav className={styles.menu}>
-                <Botao condition="true" url="./">
+                <Botao condition="true" url="./" >
                     HOME
                 </Botao>
-                <Botao condition="true" url="./addvideo">
+                <Botao condition="true" url="./addvideo" >
                     NOVO VIDEO
                 </Botao>
             </nav>
