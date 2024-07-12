@@ -23,19 +23,19 @@ function Video({ video, categoria, aoDeletar, aoEditar, aoVerVideo }) {
                     onClick={() => aoDeletar(video.id)}
                 >
                     <MdDeleteForever />
-                    <p>DELETAR</p>
+                    <p>Deletar</p>
                 </div>
                 <div className={styles.item_opcao}
                     onClick={() => {aoEditar(video); irAoTopo();}} 
                 
                 >
                     <MdOutlineEdit />
-                    <p>EDITAR</p>
+                    <p>Editar</p>
                 </div>
 
                 <Link to={`/${video.id}`} className={styles.item_opcao}>
                     <MdReadMore />
-                    <p>SOBRE</p>
+                    <p>Sobre</p>
                 </Link>
             </div>
         </div>

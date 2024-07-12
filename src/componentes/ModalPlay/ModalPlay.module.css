@@ -13,23 +13,35 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    width: 560px;
-    height: 315px;
+    width: 840px;
+    height: 470px;
 }
 
 .video {
-    width: 560px;
-    height: 315px;
+    width: 840px;
+    height: 470px;
 }
 
 .iconeFechar {
     color: var(--corFonte_primaria);
-    font-size: 25px;
+    font-size: 30px;
     top: 2%;
     left: 96%;
     z-index: 1000;
     position: absolute;
 }
+
+@media (max-width: 1023px) {
+    .modal {
+        width: 615px;
+        height: 345px;
+    }
+    .video {
+        width: 615px;
+        height: 345px;
+    }
+}
+
 
 @media (max-width: 767px) {
     .modal {
@@ -48,16 +60,16 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 470px) {
     .modal {
         top: 40%;
-        width: 250px;
-        height: 142px;
+        width: 275px;
+        height: 156px;
     }
     
     .video {
-        width: 250px;
-        height: 142px;
+        width: 275px;
+        height: 156px;
     }
 
     .iconeFechar {

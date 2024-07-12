@@ -40,3 +40,12 @@
     }
 
 }
+
+@media (max-width: 500px) {
+    .botao,
+    .botaoDestacado {
+        font-size: 0.8rem;
+        width: 115px;
+        height: 40px;
+    }
+}

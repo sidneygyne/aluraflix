@@ -49,6 +49,8 @@ function Inicio() {
         setVideoVer(video)
     }
 
+    console.log(videoVer)
+
     return (
         <>
             <Banner 

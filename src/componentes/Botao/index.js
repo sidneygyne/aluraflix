@@ -26,9 +26,7 @@ export const Botao = ({ url, children }) => {
 }
 
 export const BotaoFormulario = ({type, children}) => {
-
     const classeBotao = type === 'submit' ? styles.botaoDestacado : styles.botao;
-
     return (
         <button className={classeBotao} type={type} >{children}</button> 
     )
